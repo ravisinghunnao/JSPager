@@ -67,14 +67,14 @@ margin:10px;
 	var pager = new $pager(document.getElementById("pager2"));
     pager.Create();
 
-    pager.onPageChanged = function () {
-       
-        alert("onPageChanged event occured.");
+   pager.onPageChanged = function () {
+
+        alert("onPageChanged event occured. Page number: " + pager.currentPageNumber);
     }
 
     pager.onPageSizeChanged = function () {
 
-        alert("onPageSizeChanged event occured.");
+        alert("onPageSizeChanged event occured. Page Size:" + pager.pageSize);
     }
 
 </script>
