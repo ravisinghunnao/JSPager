@@ -21,7 +21,8 @@
 
         targetElement.innerHTML = "";
 
-        var f = AddLink($this.firstButtonText, targetElement);
+        var f = AddButton($this.firstButtonText, targetElement);
+     
         f.onclick = function () {
 
             $this.currentPageNumber = 1;
@@ -32,7 +33,8 @@
             }
 
         }
-        var p = AddLink($this.previousButtonText, targetElement);
+        var p = AddButton($this.previousButtonText, targetElement);
+      
         p.onclick = function () {
             if ($this.currentPageNumber > 1) {
                 $this.currentPageNumber--;
@@ -80,7 +82,8 @@
 
         }
 
-        var n = AddLink($this.nextButtonText, targetElement);
+        var n = AddButton($this.nextButtonText, targetElement);
+      
         n.onclick = function () {
             if (($this.totalRecords / $this.pageSize) > $this.currentPageNumber && $this.currentPageNumber < startNumber + $this.MaxPageNumber) {
                 $this.currentPageNumber++;
@@ -92,7 +95,8 @@
 
 
         }
-        var l = AddLink($this.lastButtonText, targetElement);
+        var l = AddButton($this.lastButtonText, targetElement);
+        
         l.onclick = function () {
             $this.currentPageNumber = totalButton;
             
@@ -135,10 +139,16 @@
     function AddLink(text, targetElement) {
         var a = document.createElement("a");
         a.innerHTML = text;
-        a.style.padding = "10px";
         a.href = "javascript:void(0)";
         targetElement.appendChild(a);
         return a;
+    }
+    function AddButton(text, targetElement) {
+        var b = document.createElement("button");
+        b.innerHTML = text;
+        b.className = "pagerbutton";
+        targetElement.appendChild(b);
+        return b;
     }
 
 

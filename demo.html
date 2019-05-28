@@ -4,82 +4,52 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pager</title>
+    <title>JSPager</title>
 
+    
+     
+    
+    
 </head>
 <body>
-   
+     
     
 
 
-
-    <div class="container body-content">
-        
+ 
 <script src="Pager.js"></script>
-<h2>Pager</h2>
-<style type="text/css">
-.pagerdiv {
+<link href="pager.css" rel="stylesheet" />
+<h2>JSPager</h2>
 
-margin:10px;
-}
-    .pagerdiv a {
-        background: linear-gradient(#fffefe,#d9edf7);
-        margin: 1px;
-        border-radius: 5px;
-        border: 1px outset;
-		    color: black;
-    text-decoration: none;
-    }
-        .pagerdiv a:active {
-            background: linear-gradient(#d9edf7,#fffefe)!important;
-            
-        }
-
-    a.selectedpage {
-        
-        font-weight: bold;
-        border: 1px inset!important;
-        background: white!important;
-    }
-    .pagerdiv select {
-        padding: 8px;
-        border-radius: 5px;
-    }
-    .pagerdiv span {
-        padding: 8px;
-        border-radius: 5px;
-    }
-</style>
-<h3>Total records: 100  </h3>
-
-<p>Without event notificaton</p>
-<div id="pager1" class="pagerdiv"></div>
-
-
-
-<p>With event notificaton</p>
-<div id="pager2" class="pagerdiv"></div>
+ <p>Without event notification</p>
+<div class="pager" id="pagerdiv1"></div>
+<p>With event notification</p>
+<div class="pager" id="pagerdiv2"></div>
 <script>
-    var pager = new $pager(document.getElementById("pager1"));
-    pager.PageSizeList = new Array(5,15,25,35,45,55)
-    pager.Create();
-	
-	var pager = new $pager(document.getElementById("pager2"));
-    pager.Create();
+    var pager1 = new $pager(document.getElementById("pagerdiv1"));
+    pager1.PageSizeList = new Array(5,15,25,35,45,55)
+    pager1.Create();
 
-   pager.onPageChanged = function () {
 
-        alert("onPageChanged event occured. Page number: " + pager.currentPageNumber);
+    var pager2 = new $pager(document.getElementById("pagerdiv2"));
+    pager2.Create();
+
+    pager2.onPageChanged = function () {
+
+        alert("onPageChanged event occured. Page number: " + pager2.currentPageNumber);
     }
 
-    pager.onPageSizeChanged = function () {
+    pager2.onPageSizeChanged = function () {
 
-        alert("onPageSizeChanged event occured. Page Size:" + pager.pageSize);
+        alert("onPageSizeChanged event occured. Page Size:" + pager2.pageSize);
     }
 
 </script>
 
-       
+ 
+
+    
+    
 
     
 </body>

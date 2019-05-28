@@ -1,0 +1,37 @@
+﻿.pager a {
+    background: linear-gradient(#fffefe,#aab1ce);
+    margin: 1px;
+    border-radius: 5px;
+    border: 1px outset;
+    padding: 7px 10px;
+    text-decoration: none;
+    color: black;
+}
+
+    .pager a:active {
+        background: linear-gradient(#d9edf7,#fffefe) !important;
+    }
+
+a.selectedpage {
+    font-weight: bold;
+    border: 1px inset !important;
+    background: white !important;
+}
+
+.pager select {
+    padding: 6px;
+    border-radius: 5px;
+    margin: 3px;
+}
+
+.pager span {
+    padding: 8px;
+    border-radius: 5px;
+}
+.pager .pagerbutton {
+    width: 100px;
+    background: linear-gradient(#a9b1e2,white,#8b89a5);
+    color: #1d0e0e;
+    padding: 8px;
+    border-radius: 5px;
+}
